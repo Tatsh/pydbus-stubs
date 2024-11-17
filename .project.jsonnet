@@ -55,6 +55,10 @@ local manifestYaml(value) =
   std.manifestYamlDoc(value, true, false);
 
 {
+  '.gitattributes': manifestLines([
+    '*.lock binary',
+    '/.yarn/**/*.cjs',
+  ]),
   '.github/FUNDING.yml': manifestYaml(github_funding),
   '.github/dependabot.yml': manifestYaml({
     updates: [
@@ -128,6 +132,10 @@ local manifestYaml(value) =
               cache: 'poetry',
               'python-version': '${{ matrix.python-version }}',
             },
+          },
+          {
+            name: 'Install system dependencies',
+            run: 'sudo apt-get install -y gobject-introspection libgirepository1.0-dev',
           },
           {
             name: 'Install dependencies (Poetry)',
@@ -602,6 +610,8 @@ local manifestYaml(value) =
               commitizen: '^3.31.0',
               mypy: '^1.13.0',
               pydbus: '^0.6.0',
+              pygobject: '^3.50.0',
+              'pygobject-stubs': '^2.12.0',
               ruff: '^0.7.4',
               yapf: '^0.43.0',
             },
@@ -617,6 +627,11 @@ local manifestYaml(value) =
             },
           },
         },
+      },
+      commitizen: {
+        tag_format: 'v$version',
+        version_files: ['.project.jsonnet', 'README.md', 'package.json'],
+        version_provider: 'poetry',
       },
       coverage: {
         report: {
