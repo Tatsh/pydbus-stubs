@@ -20,7 +20,7 @@ local github_funding = {
   patreon: 'tatsh2',
 };
 local github_theme = 'jekyll-theme-hacker';
-local keywords = ['command line', 'library', 'media'];
+local keywords = ['dbus', 'stubs', 'typing'];
 local license = 'MIT';
 local module_name = 'pydbus-stubs';
 local repository_name = project_name;
@@ -602,6 +602,7 @@ local manifestYaml(value) =
         },
         dependencies: {
           python: '>=3.%s,<4' % min_python_minor_version,
+          'pygobject-stubs': '^2.12.0',
         },
         group: {
           dev: {
@@ -630,7 +631,7 @@ local manifestYaml(value) =
       },
       commitizen: {
         tag_format: 'v$version',
-        version_files: ['.project.jsonnet', 'README.md', 'package.json'],
+        version_files: ['.project.jsonnet', 'CITATION.cff', 'README.md', 'package.json'],
         version_provider: 'poetry',
       },
       coverage: {
