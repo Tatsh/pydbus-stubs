@@ -12,12 +12,14 @@ eeyore
 exitable
 furb
 gdbus
+gobject
 htmlcov
 introspectable
 isort
 jinja
 jsonnet
 jsonschema
+libgirepository
 markdownlint
 mypy
 norecursedirs
