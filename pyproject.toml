@@ -65,7 +65,7 @@ python = ">=3.9,<4"
 optional = true
 
 [tool.poetry.group.dev.dependencies]
-commitizen = "^3.31.0"
+commitizen = ">=3.31,<5.0"
 mypy = "^1.13.0"
 pydbus = "^0.6.0"
 pygobject = "^3.50.0"
