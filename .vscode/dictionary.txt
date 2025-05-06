@@ -17,11 +17,13 @@ esbenp
 esbonio
 exitable
 furb
+gatt
 gdbus
 gobject
 hoverxref
 htmlcov
 introspectable
+isident
 isort
 jinja
 jsonnet
@@ -30,11 +32,13 @@ lextudio
 libcairo
 libgirepository
 libjsonnet
+modalias
 mypy
 norecursedirs
 numpy
 numpydoc
 outargs
+pairable
 pascalreitermann
 pipx
 polkit
@@ -51,6 +55,7 @@ regen
 schemafile
 tatsh
 testpaths
+typeshed
 udvare
 unown
 wiswa
