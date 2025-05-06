@@ -1,30 +1,47 @@
-from typing import Any
+from typing import Generic, TypeVar
+from typing_extensions import Self
 from xml.etree.ElementTree import Element
 
 from .bus import Bus
-from .proxy_property import ProxyProperty as ProxyProperty
-from .proxy_signal import OnSignal as OnSignal, ProxySignal as ProxySignal
-from .timeout import timeout_to_glib as timeout_to_glib
-
-
-class CompositeObject:  # inside CompositeInterface
-    def __getitem__(self, iface: str) -> Any:
-        ...
 
 
 class ProxyMixin:
-    def get(self, bus_name: str, object_path: str | None = None, **kwargs: Any) -> CompositeObject:
+    def get(self,
+            bus_name: str,
+            object_path: str | None = None,
+            *,
+            timeout: int | None = None) -> CompositeObject:
         ...
 
 
-class ProxyObject:
-    def __init__(self, bus: Bus, bus_name: str, path: str, object: Any = None) -> None:
+_T = TypeVar('_T')
+
+
+class ProxyObject(Generic[_T]):
+    def __init__(self, bus: Bus, bus_name: str, path: str, object: Self | None = None) -> None:
+        ...
+
+    def __getattr__(self, name: str) -> _T:
+        ...
+
+    def __setattr__(self, name: str, value: _T) -> None:
         ...
 
 
-def Interface(iface: Element) -> Any:
+class CompositeObject(ProxyObject[_T]):  # Inside CompositeInterface
+    def __getitem__(self, iface: str) -> ProxyObject[_T]:
+        ...
+
+
+class interface(ProxyObject[_T]):  # inside Interface
+    @staticmethod
+    def _Introspect() -> None:
+        ...
+
+
+def Interface(iface: Element) -> interface[object]:
     ...
 
 
-def CompositeInterface(introspection: Element) -> CompositeObject:
+def CompositeInterface(introspection: Element) -> CompositeObject[object]:
     ...

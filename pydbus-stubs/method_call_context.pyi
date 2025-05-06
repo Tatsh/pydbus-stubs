@@ -1,4 +1,4 @@
-from typing import Any, NamedTuple
+from typing import NamedTuple
 
 from gi.repository import Gio
 
@@ -8,7 +8,7 @@ from .bus import Bus
 class AuthorizationResult(NamedTuple):
     is_authorized: bool
     is_challenge: bool
-    details: Any
+    details: dict[str, str]
 
 
 class MethodCallContext:
@@ -20,7 +20,7 @@ class MethodCallContext:
         ...
 
     @property
-    def sender(self) -> Any:
+    def sender(self) -> str:
         ...
 
     @property
@@ -37,9 +37,12 @@ class MethodCallContext:
 
     def check_authorization(self,
                             action_id: str,
-                            details: Any,
-                            interactive: bool = ...) -> AuthorizationResult:
+                            details: dict[str, str],
+                            interactive: bool = False) -> AuthorizationResult:
         ...
 
-    def is_authorized(self, action_id: str, details: Any, interactive: bool = ...) -> bool:
+    def is_authorized(self,
+                      action_id: str,
+                      details: dict[str, str],
+                      interactive: bool = False) -> bool:
         ...

@@ -1,29 +1,33 @@
-from typing import Any
-from collections.abc import Sequence
 from xml.etree.ElementTree import Element
 
-from gi.repository import GLib, Gio
+from gi.repository import Gio, GLib
 
 from .bus import Bus
-from .generic import signal
 from .exitable import Exitable
-from functools import partial as partial
+from .generic import signal
 
 
 class ObjectWrapper(Exitable):
-    object: Any
-    outargs: dict[str, Any]
-    readable_properties: dict[str, Any]
-    writable_properties: dict[str, Any]
+    object: str
+    outargs: dict[str, GLib.Variant]
+    readable_properties: dict[str, GLib.Variant]
+    writable_properties: dict[str, GLib.Variant]
 
-    def __init__(self, object: Any, interfaces: Element) -> None:
+    def __init__(self, object: str, interfaces: Element) -> None:
         ...
 
     SignalEmitted: signal
 
-    def call_method(self, connection: Gio.DBusConnection, sender: Any, object_path: Any,
-                    interface_name: str, method_name: str, parameters: Any,
-                    invocation: Gio.DBusMethodInvocation) -> None:
+    def call_method(
+        self,
+        connection: Gio.DBusConnection,
+        sender: str,
+        object_path: str,
+        interface_name: str,
+        method_name: str,
+        parameters: GLib.Variant,
+        invocation: Gio.DBusMethodInvocation,
+    ) -> None:
         ...
 
     def Get(self, interface_name: str, property_name: str) -> GLib.Variant:
@@ -32,11 +36,11 @@ class ObjectWrapper(Exitable):
     def GetAll(self, interface_name: str) -> dict[str, GLib.Variant]:
         ...
 
-    def Set(self, interface_name: str, property_name: str, value: Any) -> None:
+    def Set(self, interface_name: str, property_name: str, value: GLib.Variant) -> None:
         ...
 
-    def unwrap(self, *args: Any, **kwargs: Any) -> None:
-        ...
+    def unwrap(self) -> None:
+        ...  # added by ExitableWithAliases('unwrap')
 
 
 class ObjectRegistration(Exitable):
@@ -44,15 +48,15 @@ class ObjectRegistration(Exitable):
                  bus: Bus,
                  path: str,
                  interfaces: Element,
-                 wrapper: Any,
-                 own_wrapper: bool = ...) -> None:
+                 wrapper: ObjectWrapper,
+                 own_wrapper: bool = False) -> None:
         ...
 
-    def unregister(self, *args: Any, **kwargs: Any) -> None:
-        ...
+    def unregister(self) -> None:
+        ...  # added by ExitableWithAliases('unregister')
 
 
 class RegistrationMixin:
-    def register_object(self, path: str, object: Any,
-                        node_info: Sequence[str]) -> ObjectRegistration:
+    def register_object(self, path: str, object: str,
+                        node_info: str | list[str] | tuple[str, ...]) -> ObjectRegistration:
         ...

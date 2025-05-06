@@ -1,13 +1,28 @@
-from typing import Any
+from _typeshed import Unused
+from typing import Generic, TypeVar, overload
+from typing_extensions import Self
 from xml.etree.ElementTree import Element
 
+from .proxy import ProxyObject
 
-class ProxyProperty:
+_T = TypeVar('_T')
+
+
+class ProxyProperty(Generic[_T]):
     def __init__(self, iface_name: str, property: Element) -> None:
         ...
 
-    def __get__(self, instance: Any, owner: Any) -> Any:
+    @overload
+    def __get__(self, instance: None, owner: Unused) -> Self:
         ...
 
-    def __set__(self, instance: Any, value: Any) -> None:
+    @overload
+    def __get__(self, instance: ProxyObject[_T], owner: Unused) -> _T:
+        ...
+
+    @overload
+    def __get__(self, instance: ProxyObject[_T] | None, owner: Unused) -> Self | _T:
+        ...
+
+    def __set__(self, instance: ProxyObject[_T] | None, value: _T) -> None:
         ...

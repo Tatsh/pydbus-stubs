@@ -1,34 +1,57 @@
-from typing import Any
+from _typeshed import Unused
 from collections.abc import Callable
+from typing import Generic, TypeVar, overload
+from typing_extensions import Self
 from xml.etree.ElementTree import Element
 
-from typing_extensions import Self
-
 from .generic import bound_signal
+from .proxy import ProxyObject
+from .subscription import Subscription
+
+_PT = TypeVar('_PT')  # ProxyObject type
+_T = TypeVar('_T')
 
 
-class ProxySignal:
+class ProxySignal(Generic[_PT]):
     def __init__(self, iface_name: str, signal: Element) -> None:
         ...
 
-    def connect(self, object: Any, callback: Callable[..., Any]) -> Any:
+    def connect(self, object: str, callback: Callable[..., None]) -> Subscription:
         ...
 
-    def __get__(self, instance: Any, owner: Any) -> bound_signal | Self:
+    @overload
+    def __get__(self, instance: None, owner: Unused) -> Self:
         ...
 
-    def __set__(self, instance: Any, value: Any) -> None:
+    @overload
+    def __get__(self, instance: ProxyObject[_PT], owner: Unused) -> bound_signal:
         ...
 
-
-class OnSignal:
-    signal: ProxySignal
-
-    def __init__(self, signal: ProxySignal) -> None:
+    @overload
+    def __get__(self, instance: ProxyObject[_PT] | None, owner: Unused) -> bound_signal | Self:
         ...
 
-    def __get__(self, instance: Any, owner: Any) -> Any:
+    def __set__(self, instance: Unused, value: Unused) -> None:
+        ...  # Always raises
+
+
+class OnSignal(Generic[_T, _PT]):
+    signal: ProxySignal[_PT]
+
+    def __init__(self, signal: ProxySignal[_PT]) -> None:
         ...
 
-    def __set__(self, instance: Any, value: Any) -> None:
+    @overload
+    def __get__(self, instance: None, owner: Unused) -> Self:
+        ...
+
+    @overload
+    def __get__(self, instance: ProxyObject[_PT], owner: Unused) -> _T:
+        ...
+
+    @overload
+    def __get__(self, instance: ProxyObject[_PT] | None, owner: Unused) -> _T:
+        ...
+
+    def __set__(self, instance: ProxyObject[_PT] | None, value: _T) -> None:
         ...

@@ -1,21 +1,30 @@
-from typing import Any
-from ._inspect3 import Signature
+from _typeshed import Unused
+from inspect import Signature
+from typing import Generic, TypeVar
 
-put_signature_in_doc: bool
+from .proxy import ProxyObject
+
+_CT = TypeVar('_CT')  # __call__ return type
+_GT = TypeVar('_GT')  # __get__ return type
+_PT = TypeVar('_PT')  # ProxyObject type
+put_signature_in_doc: bool = False
 
 
 class DBUSSignature(Signature):
     ...
 
 
-class ProxyMethod:
+class ProxyMethod(Generic[_GT, _CT, _PT]):
     __signature__: DBUSSignature
 
     def __init__(self, iface_name: str, method: str) -> None:
         ...
 
-    def __call__(self, instance: Any, *args: Any, **kwargs: Any) -> Any:
+    def __call__(self,
+                 instance: ProxyObject[_PT],
+                 *args: object,
+                 timeout: int | None = None) -> _CT:
         ...
 
-    def __get__(self, instance: Any, owner: Any) -> Any:
+    def __get__(self, instance: ProxyObject[_PT], owner: Unused) -> _GT:
         ...

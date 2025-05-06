@@ -1,2 +1,6 @@
+def isident(s: str) -> bool:
+    ...
+
+
 def filter_identifier(name: str) -> str:
     ...

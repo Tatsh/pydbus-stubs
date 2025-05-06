@@ -1,15 +1,16 @@
-from typing import Any
-from collections.abc import Callable
-from typing_extensions import Self
 import types
+from _typeshed import Unused
+from collections.abc import Callable
+from typing import Generic, TypeVar, overload
+from typing_extensions import Self
 
 
 class subscription:
-    callback_list: list[Callable[..., Any]]
-    callback: Callable[..., Any]
+    callback_list: list[Callable[..., object]]
+    callback: Callable[..., object]
 
-    def __init__(self, callback_list: list[Callable[..., Any]], callback: Callable[...,
-                                                                                   Any]) -> None:
+    def __init__(self, callback_list: list[Callable[..., object]],
+                 callback: Callable[..., object]) -> None:
         ...
 
     def unsubscribe(self) -> None:
@@ -26,43 +27,51 @@ class subscription:
         ...
 
 
-class bound_signal:
-    __signal__: signal
+_T = TypeVar('_T')
 
-    def __init__(self, signal: signal, instance: Any) -> None:
+
+class bound_signal(Generic[_T]):
+    __signal__: signal[_T]
+
+    def __init__(self, signal: signal[_T], instance: _T) -> None:
         ...
 
     @property
-    def callbacks(self) -> list[Callable[..., Any]]:
+    def callbacks(self) -> list[Callable[..., object]]:
         ...
 
-    def connect(self, callback: Callable[..., Any]) -> subscription:
+    def connect(self, callback: Callable[..., object]) -> subscription:
         ...
 
-    def emit(self, *args: Any) -> None:
+    def emit(self, *args: object) -> None:
         ...
 
-    def __call__(self, *args: Any) -> None:
+    def __call__(self, *args: object) -> None:
         ...
 
 
-class signal:
-    map: dict[Any, Any]
+class signal(Generic[_T]):
+    map: dict[object, Callable[..., object]]
 
     def __init__(self) -> None:
         ...
 
-    def connect(self, object: Any, callback: Callable[..., Any]) -> subscription:
+    def connect(self, object: str, callback: Callable[..., object]) -> subscription:
         ...
 
-    def emit(self, object: Any, *args: Any) -> None:
+    def emit(self, object: str, *args: object) -> None:
         ...
 
-    def __get__(self, instance: Any, owner: Any) -> Self | bound_signal:
+    @overload
+    def __get__(self, instance: None, owner: Unused) -> Self:
         ...
 
-    def __set__(self, instance: Any, value: Any) -> None:
+    @overload
+    def __get__(self, instance: _T, owner: Unused) -> bound_signal[_T]:
         ...
 
+    def __set__(self, instance: Unused, value: Unused) -> None:
+        ...  # Always raises
 
-bound_method: Any  # type[Callable[..., None]]
+
+bound_method: Callable[..., None]  # type(signal().emit)

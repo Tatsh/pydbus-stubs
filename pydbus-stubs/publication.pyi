@@ -1,18 +1,30 @@
-from typing import Any
+from collections.abc import Iterable
 
 from .bus import Bus
 from .exitable import Exitable
-from gi.repository import Gio as Gio
 
 
 class Publication(Exitable):
-    def __init__(self, bus: Bus, bus_name: str, *objects: Any, **kwargs: Any) -> None:
+    def __init__(
+        self,
+        bus: Bus,
+        bus_name: str,
+        *objects: Iterable[tuple[str, str, str | list[str] | tuple[str, ...]] | tuple[str, str]
+                           | tuple[str] | str],
+        allow_replacement: bool = True,
+        replace: bool = False,
+    ) -> None:
         ...
 
-    def unpublish(self, *args: Any, **kwargs: Any) -> None:
-        ...
+    def unpublish(self) -> None:
+        ...  # added by ExitableWithAliases('unpublish')
 
 
 class PublicationMixin:
-    def publish(self, bus_name: str, *objects: Any) -> Publication:
+    def publish(
+        self,
+        bus_name: str,
+        *objects: Iterable[tuple[str, str, str | list[str] | tuple[str, ...]] | tuple[str, str]
+                           | tuple[str] | str],
+    ) -> Publication:
         ...
