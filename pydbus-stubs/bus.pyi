@@ -236,8 +236,9 @@ class Bus(ProxyMixin[_T], RequestNameMixin[_T], OwnMixin, WatchMixin, Subscripti
         ...
 
     @overload
-    def get(self, bus_name: Literal['org.freedesktop.Notifications']
-            ) -> OrgFreedesktopNotifications[_T, object]:
+    def get(
+        self, bus_name: Literal['org.freedesktop.Notifications']
+    ) -> OrgFreedesktopNotifications[_T, object]:
         ...
 
     @overload
