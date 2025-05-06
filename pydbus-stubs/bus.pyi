@@ -1,5 +1,5 @@
 import types
-from typing import Any, Literal, TypedDict, overload
+from typing import Any, Generic, Literal, TypeVar, TypedDict, overload
 from typing_extensions import Self
 
 from gi.repository import Gio
@@ -12,12 +12,15 @@ from .registration import RegistrationMixin
 from .request_name import RequestNameMixin
 from .subscription import SubscriptionMixin
 
+_T = TypeVar('_T')
+_ST = TypeVar('_ST')  # signal type
 
-def bus_get(type: Gio.BusType) -> Bus:
+
+def bus_get(type: Gio.BusType) -> Bus[object]:
     ...
 
 
-def connect(address: str) -> Bus:
+def connect(address: str) -> Bus[object]:
     ...
 
 
@@ -159,18 +162,18 @@ class OrgFreedesktopDBusObjectManager:
         ...
 
 
-class OrgBluez(CompositeObject):
-    def __getitem__(
+class OrgBluez(CompositeObject[_T]):
+    def __getitem__(  # type: ignore[override]
             self,
             key: Literal['org.freedesktop.DBus.ObjectManager']) -> OrgFreedesktopDBusObjectManager:
-        ...  # type: ignore[override]
+        ...
 
 
-class OrgFreedesktopNotifications(CompositeObject):
+class OrgFreedesktopNotifications(CompositeObject[_T], Generic[_T, _ST]):
     Inhibited: bool
-    ActivationToken: bound_signal
-    ActionInvoked: bound_signal
-    NotificationClosed: bound_signal
+    ActivationToken: bound_signal[_ST]
+    ActionInvoked: bound_signal[_ST]
+    NotificationClosed: bound_signal[_ST]
 
     def CloseNotification(self, id: int) -> None:
         ...
@@ -204,8 +207,8 @@ class OrgFreedesktopNotifications(CompositeObject):
         ...
 
 
-class Bus(ProxyMixin, RequestNameMixin, OwnMixin, WatchMixin, SubscriptionMixin, RegistrationMixin,
-          PublicationMixin):
+class Bus(ProxyMixin[_T], RequestNameMixin[_T], OwnMixin, WatchMixin, SubscriptionMixin,
+          RegistrationMixin[_T], PublicationMixin):
     Type: type[Gio.BusType] = ...
     autoclose: bool
     con: Gio.DBusConnection
@@ -229,25 +232,26 @@ class Bus(ProxyMixin, RequestNameMixin, OwnMixin, WatchMixin, SubscriptionMixin,
         ...
 
     @overload  # type: ignore[override]
-    def get(self, domain: Literal['.Notifications']) -> OrgFreedesktopNotifications:
-        ...
-
-    @overload  # type: ignore[override]
-    def get(self, domain: Literal['org.freedesktop.Notifications']) -> OrgFreedesktopNotifications:
+    def get(self, bus_name: Literal['.Notifications']) -> OrgFreedesktopNotifications[_T, object]:
         ...
 
     @overload
-    def get(self, domain: Literal['org.bluez'], path: Literal['/']) -> OrgBluez:
+    def get(self, bus_name: Literal['org.freedesktop.Notifications']
+            ) -> OrgFreedesktopNotifications[_T, object]:
         ...
 
     @overload
-    def get(self, domain: str, path: str) -> Any:
-        ...  # unpredictable return value.
+    def get(self, bus_name: Literal['org.bluez'], object_path: Literal['/']) -> OrgBluez[_T]:
+        ...
+
+    @overload
+    def get(self, bus_name: str, object_path: str) -> Any:
+        ...
 
 
-def SystemBus() -> Bus:
+def SystemBus() -> Bus[object]:
     ...
 
 
-def SessionBus() -> Bus:
+def SessionBus() -> Bus[object]:
     ...

@@ -1,8 +1,10 @@
-from typing import NamedTuple
+from typing import Generic, NamedTuple, TypeVar
 
 from gi.repository import Gio
 
 from .bus import Bus
+
+_T = TypeVar('_T')
 
 
 class AuthorizationResult(NamedTuple):
@@ -11,12 +13,12 @@ class AuthorizationResult(NamedTuple):
     details: dict[str, str]
 
 
-class MethodCallContext:
+class MethodCallContext(Generic[_T]):
     def __init__(self, gdbus_method_invocation: Gio.DBusMethodInvocation) -> None:
         ...
 
     @property
-    def bus(self) -> Bus:
+    def bus(self) -> Bus[_T]:
         ...
 
     @property

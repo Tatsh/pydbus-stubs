@@ -4,21 +4,20 @@ from xml.etree.ElementTree import Element
 
 from .bus import Bus
 
+_T = TypeVar('_T')
 
-class ProxyMixin:
+
+class ProxyMixin(Generic[_T]):
     def get(self,
             bus_name: str,
             object_path: str | None = None,
             *,
-            timeout: int | None = None) -> CompositeObject:
+            timeout: int | None = None) -> CompositeObject[_T]:
         ...
 
 
-_T = TypeVar('_T')
-
-
 class ProxyObject(Generic[_T]):
-    def __init__(self, bus: Bus, bus_name: str, path: str, object: Self | None = None) -> None:
+    def __init__(self, bus: Bus[_T], bus_name: str, path: str, object: Self | None = None) -> None:
         ...
 
     def __getattr__(self, name: str) -> _T:

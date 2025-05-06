@@ -12,7 +12,7 @@ _PT = TypeVar('_PT')  # ProxyObject type
 _T = TypeVar('_T')
 
 
-class ProxySignal(Generic[_PT]):
+class ProxySignal(Generic[_T, _PT]):
     def __init__(self, iface_name: str, signal: Element) -> None:
         ...
 
@@ -24,11 +24,11 @@ class ProxySignal(Generic[_PT]):
         ...
 
     @overload
-    def __get__(self, instance: ProxyObject[_PT], owner: Unused) -> bound_signal:
+    def __get__(self, instance: ProxyObject[_PT], owner: Unused) -> bound_signal[_T]:
         ...
 
     @overload
-    def __get__(self, instance: ProxyObject[_PT] | None, owner: Unused) -> bound_signal | Self:
+    def __get__(self, instance: ProxyObject[_PT] | None, owner: Unused) -> bound_signal[_T] | Self:
         ...
 
     def __set__(self, instance: Unused, value: Unused) -> None:
@@ -36,9 +36,9 @@ class ProxySignal(Generic[_PT]):
 
 
 class OnSignal(Generic[_T, _PT]):
-    signal: ProxySignal[_PT]
+    signal: ProxySignal[_T, _PT]
 
-    def __init__(self, signal: ProxySignal[_PT]) -> None:
+    def __init__(self, signal: ProxySignal[_T, _PT]) -> None:
         ...
 
     @overload

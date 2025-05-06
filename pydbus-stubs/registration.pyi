@@ -1,3 +1,4 @@
+from typing import Generic, TypeVar
 from xml.etree.ElementTree import Element
 
 from gi.repository import Gio, GLib
@@ -6,8 +7,10 @@ from .bus import Bus
 from .exitable import Exitable
 from .generic import signal
 
+_T = TypeVar('_T')
 
-class ObjectWrapper(Exitable):
+
+class ObjectWrapper(Exitable, Generic[_T]):
     object: str
     outargs: dict[str, GLib.Variant]
     readable_properties: dict[str, GLib.Variant]
@@ -16,7 +19,7 @@ class ObjectWrapper(Exitable):
     def __init__(self, object: str, interfaces: Element) -> None:
         ...
 
-    SignalEmitted: signal
+    SignalEmitted: signal[_T]
 
     def call_method(
         self,
@@ -43,12 +46,12 @@ class ObjectWrapper(Exitable):
         ...  # added by ExitableWithAliases('unwrap')
 
 
-class ObjectRegistration(Exitable):
+class ObjectRegistration(Exitable, Generic[_T]):
     def __init__(self,
-                 bus: Bus,
+                 bus: Bus[_T],
                  path: str,
                  interfaces: Element,
-                 wrapper: ObjectWrapper,
+                 wrapper: ObjectWrapper[_T],
                  own_wrapper: bool = False) -> None:
         ...
 
@@ -56,7 +59,7 @@ class ObjectRegistration(Exitable):
         ...  # added by ExitableWithAliases('unregister')
 
 
-class RegistrationMixin:
+class RegistrationMixin(Generic[_T]):
     def register_object(self, path: str, object: str,
-                        node_info: str | list[str] | tuple[str, ...]) -> ObjectRegistration:
+                        node_info: str | list[str] | tuple[str, ...]) -> ObjectRegistration[_T]:
         ...
