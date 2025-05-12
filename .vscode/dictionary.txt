@@ -1,6 +1,8 @@
 aquired
 autodoc
+automodule
 bluez
+bsky
 codeowners
 commitizen
 conftest
