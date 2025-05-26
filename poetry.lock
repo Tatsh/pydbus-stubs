@@ -396,14 +396,14 @@ markers = {main = "extra == \"erdantic\" and platform_system == \"Windows\"", do
 
 [[package]]
 name = "commitizen"
-version = "4.7.2"
+version = "4.8.2"
 description = "Python commitizen client tool"
 optional = false
 python-versions = "<4.0,>=3.9"
 groups = ["dev"]
 files = [
-    {file = "commitizen-4.7.2-py3-none-any.whl", hash = "sha256:eb3cd2da0690c6edbb8c11e586d3f07b09e9795424aa51f5413ed89827927623"},
-    {file = "commitizen-4.7.2.tar.gz", hash = "sha256:e5ca28f909c3b3d28575b294561feeee21e33c864c7362babfe0e7798ae11aae"},
+    {file = "commitizen-4.8.2-py3-none-any.whl", hash = "sha256:86cae0bd8e1da889389d828b30a5acb79b62f9290f9274b127ee9d8c189eb16c"},
+    {file = "commitizen-4.8.2.tar.gz", hash = "sha256:4fc73126c7300f715f11b85242550677722c57767b579100e869ccd45143e2c5"},
 ]
 
 [package.dependencies]
@@ -2065,7 +2065,7 @@ version = "78.1.1"
 description = "Easily download, build, install, upgrade, and uninstall Python packages"
 optional = false
 python-versions = ">=3.9"
-groups = ["dev", "docs"]
+groups = ["docs"]
 files = [
     {file = "setuptools-78.1.1-py3-none-any.whl", hash = "sha256:c3a9c4211ff4c309edb8b8c4f1cbfa7ae324c4ba9f91ff254e3d305b9fd54561"},
     {file = "setuptools-78.1.1.tar.gz", hash = "sha256:fcc17fd9cd898242f6b4adfaca46137a9edef687f43e6f78469692a5e70d851d"},
@@ -2743,4 +2743,4 @@ erdantic = ["erdantic"]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.10,<3.14"
-content-hash = "6cf70f869b183b37d95062934d08dabd1b74f6a9a97ae931582f60c719b82872"
+content-hash = "230e536bff2e4d3f48a7a1d40fc0c6f72bf2c060571f95880793dc84e830840a"
