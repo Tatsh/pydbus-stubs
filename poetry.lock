@@ -242,11 +242,12 @@ version = "2024.8.30"
 description = "Python package for providing Mozilla's CA Bundle."
 optional = false
 python-versions = ">=3.6"
-groups = ["dev", "docs", "tests"]
+groups = ["docs", "tests"]
 files = [
     {file = "certifi-2024.8.30-py3-none-any.whl", hash = "sha256:922820b53db7a7257ffbda3f597266d435245903d80737e34f8a45ff3e3230d8"},
     {file = "certifi-2024.8.30.tar.gz", hash = "sha256:bec941d2aa8195e248a60b31ff9f0558284cf01a52591ceda73ea9afffd69fd9"},
 ]
+markers = {tests = "python_version < \"3.13\""}
 
 [[package]]
 name = "charset-normalizer"
@@ -362,6 +363,7 @@ files = [
     {file = "charset_normalizer-3.4.0-py3-none-any.whl", hash = "sha256:fe9f97feb71aa9896b81973a7bbada8c49501dc73e58a10fcef6663af95e5079"},
     {file = "charset_normalizer-3.4.0.tar.gz", hash = "sha256:223217c3d4f82c3ac5e29032b3f1c2eb0fb591b72161f86d93f5719079dae93e"},
 ]
+markers = {tests = "python_version < \"3.13\""}
 
 [[package]]
 name = "click"
@@ -628,14 +630,14 @@ typing-extensions = {version = ">=3.6.6", markers = "python_version < \"3.11\""}
 
 [[package]]
 name = "doc8"
-version = "1.1.2"
+version = "2.0.0"
 description = "Style checker for Sphinx (or other) RST documentation"
 optional = false
-python-versions = ">=3.8"
+python-versions = ">=3.10"
 groups = ["docs"]
 files = [
-    {file = "doc8-1.1.2-py3-none-any.whl", hash = "sha256:e787b3076b391b8b49400da5d018bacafe592dfc0a04f35a9be22d0122b82b59"},
-    {file = "doc8-1.1.2.tar.gz", hash = "sha256:1225f30144e1cc97e388dbaf7fe3e996d2897473a53a6dae268ddde21c354b98"},
+    {file = "doc8-2.0.0-py3-none-any.whl", hash = "sha256:9862710027f793c25f9b1899150660e4bf1d4c9a6738742e71f32011e2e3f590"},
+    {file = "doc8-2.0.0.tar.gz", hash = "sha256:1267ad32758971fbcf991442417a3935c7bc9e52550e73622e0e56ba55ea1d40"},
 ]
 
 [package.dependencies]
@@ -834,11 +836,12 @@ version = "3.10"
 description = "Internationalized Domain Names in Applications (IDNA)"
 optional = false
 python-versions = ">=3.6"
-groups = ["dev", "docs", "tests"]
+groups = ["docs", "tests"]
 files = [
     {file = "idna-3.10-py3-none-any.whl", hash = "sha256:946d195a0d259cbba61165e88e65941f16e9b36ea6ddb97f00452bae8b1287d3"},
     {file = "idna-3.10.tar.gz", hash = "sha256:12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"},
 ]
+markers = {tests = "python_version < \"3.13\""}
 
 [package.extras]
 all = ["flake8 (>=7.1.1)", "mypy (>=1.11.2)", "pytest (>=8.3.2)", "ruff (>=0.6.2)"]
@@ -1902,11 +1905,12 @@ version = "2.32.4"
 description = "Python HTTP for Humans."
 optional = false
 python-versions = ">=3.8"
-groups = ["dev", "docs", "tests"]
+groups = ["docs", "tests"]
 files = [
     {file = "requests-2.32.4-py3-none-any.whl", hash = "sha256:27babd3cda2a6d50b30443204ee89830707d396671944c998b5975b031ac2b2c"},
     {file = "requests-2.32.4.tar.gz", hash = "sha256:27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"},
 ]
+markers = {tests = "python_version < \"3.13\""}
 
 [package.dependencies]
 certifi = ">=2017.4.17"
@@ -2682,11 +2686,12 @@ version = "2.2.3"
 description = "HTTP library with thread-safe connection pooling, file post, and more."
 optional = false
 python-versions = ">=3.8"
-groups = ["dev", "docs", "tests"]
+groups = ["docs", "tests"]
 files = [
     {file = "urllib3-2.2.3-py3-none-any.whl", hash = "sha256:ca899ca043dcb1bafa3e262d73aa25c465bfb49e0bd9dd5d59f1d0acba2f8fac"},
     {file = "urllib3-2.2.3.tar.gz", hash = "sha256:e7d814a81dad81e6caf2ec9fdedb284ecc9c73076b62654547cc64ccdcae26e9"},
 ]
+markers = {tests = "python_version < \"3.13\""}
 
 [package.extras]
 brotli = ["brotli (>=1.0.9) ; platform_python_implementation == \"CPython\"", "brotlicffi (>=0.8.0) ; platform_python_implementation != \"CPython\""]
@@ -2740,4 +2745,4 @@ erdantic = ["erdantic"]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.10,<3.14"
-content-hash = "ee5a6279a909ad014e5a88e8d3d269c85823ff247ea3001501db8586985aa675"
+content-hash = "de86a5aead6266e217b944c5ba721fb26563d54968f4352cf3a6de65d1eddaf5"
