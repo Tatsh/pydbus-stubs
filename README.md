@@ -7,6 +7,7 @@
 [![GitHub commits since latest release (by SemVer including pre-releases)](https://img.shields.io/github/commits-since/Tatsh/pydbus-stubs/v0.0.3/master)](https://github.com/Tatsh/pydbus-stubs/compare/v0.0.3...master)
 [![CodeQL](https://github.com/Tatsh/pydbus-stubs/actions/workflows/codeql.yml/badge.svg)](https://github.com/Tatsh/pydbus-stubs/actions/workflows/codeql.yml)
 [![QA](https://github.com/Tatsh/pydbus-stubs/actions/workflows/qa.yml/badge.svg)](https://github.com/Tatsh/pydbus-stubs/actions/workflows/qa.yml)
+[![GitHub Pages](https://github.com/Tatsh/pydbus-stubs/actions/workflows/pages/pages-build-deployment/badge.svg)](https://tatsh.github.io/pydbus-stubs/)
 [![mypy](https://www.mypy-lang.org/static/mypy_badge.svg)](http://mypy-lang.org/)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
