@@ -1613,13 +1613,13 @@ windows-terminal = ["colorama (>=0.4.6)"]
 
 [[package]]
 name = "pygobject"
-version = "3.54.0"
+version = "3.54.2"
 description = "Python bindings for GObject Introspection"
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "pygobject-3.54.0.tar.gz", hash = "sha256:4652a7cc7ff950a5099d56ac61a78c144629c20f8855a1306933b46b10f3b417"},
+    {file = "pygobject-3.54.2.tar.gz", hash = "sha256:03cffeb49d8a1879b621d8f606ac904218019a0ae699b1cd3780a8ee611e696b"},
 ]
 
 [package.dependencies]
@@ -2892,4 +2892,4 @@ erdantic = ["erdantic"]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.10,<3.14"
-content-hash = "d84345ec9bef1a0105e3e4b9d92dfe6be7b8156afb42bffea691887695da0ea4"
+content-hash = "a951ab6ef3f9329874557c2f71fe54ad2ad25bd7afe59e783483dfb2e51b78fc"
