@@ -1,13 +1,12 @@
 aquired
+asyncio
 bluez
 bsky
 codeowners
 commitizen
 conftest
 coveragerc
-davidanson
 dbus
-debugpy
 djlint
 docstrings
 doctrees
@@ -17,7 +16,6 @@ exitable
 furb
 gatt
 gdbus
-gobject
 htmlcov
 introspectable
 isident
@@ -32,11 +30,9 @@ libjsonnet
 linters
 modalias
 mypy
-norecursedirs
 numpy
 outargs
 pairable
-pascalreitermann
 pipx
 polkit
 pycache
@@ -53,12 +49,9 @@ regen
 rstcheck
 schemafile
 tatsh
-testpaths
 typeshed
 udvare
 unown
 wiswa
 yapf
 yapfignore
-yarnpkg
-yarnrc

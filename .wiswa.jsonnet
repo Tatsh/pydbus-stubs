@@ -9,6 +9,14 @@ local utils = import 'utils.libjsonnet';
   want_tests: false,
   stubs_only: true,
   primary_module: self.project_name,
+  local apt_packages = ['libcairo2-dev', 'libgirepository-2.0-dev'],
+  github+: {
+    workflows+: {
+      qa+: {
+        apt_packages: apt_packages,
+      },
+    },
+  },
   pyproject+: {
     tool+: {
       poetry+: {
