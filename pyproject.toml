@@ -68,7 +68,7 @@ strict_optional = true
 warn_unreachable = true
 
 [tool.poetry.dependencies]
-pygobject-stubs = "^2.13.0"
+pygobject-stubs = "^2.14.0"
 python = ">=3.10,<3.14"
 typing-extensions = "^4.15.0"
 
