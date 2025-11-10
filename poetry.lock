@@ -16,22 +16,6 @@ files = [
 test = ["coverage", "mypy", "pexpect", "ruff", "wheel"]
 
 [[package]]
-name = "bascom"
-version = "0.0.3"
-description = "Core library that my tools use."
-optional = false
-python-versions = "<4.0,>=3.10"
-groups = ["dev"]
-files = [
-    {file = "bascom-0.0.3-py3-none-any.whl", hash = "sha256:b458f8bb1c2af8f723e521c94f7683061ab71bd59c4c30b4dc3cb3d6f6410760"},
-    {file = "bascom-0.0.3.tar.gz", hash = "sha256:5d5965ee57bdb06b8b6cd5e2b4d71cf69b37db20eb4fe13f9e2d510d048cffc2"},
-]
-
-[package.dependencies]
-colorlog = ">=6.9.0,<7.0.0"
-typing-extensions = ">=4.15.0,<5.0.0"
-
-[[package]]
 name = "charset-normalizer"
 version = "3.4.4"
 description = "The Real First Universal Charset Detector. Open, modern and actively maintained alternative to Chardet."
@@ -182,24 +166,6 @@ files = [
 ]
 
 [[package]]
-name = "colorlog"
-version = "6.10.1"
-description = "Add colours to the output of Python's logging module."
-optional = false
-python-versions = ">=3.6"
-groups = ["dev"]
-files = [
-    {file = "colorlog-6.10.1-py3-none-any.whl", hash = "sha256:2d7e8348291948af66122cff006c9f8da6255d224e7cf8e37d8de2df3bad8c9c"},
-    {file = "colorlog-6.10.1.tar.gz", hash = "sha256:eb4ae5cb65fe7fec7773c2306061a8e63e02efc2c72eba9d27b0fa23c94f1321"},
-]
-
-[package.dependencies]
-colorama = {version = "*", markers = "sys_platform == \"win32\""}
-
-[package.extras]
-development = ["black", "flake8", "mypy", "pytest", "types-colorama"]
-
-[[package]]
 name = "commitizen"
 version = "4.9.1"
 description = "Python commitizen client tool"
@@ -245,18 +211,17 @@ six = ">=1.13.0"
 
 [[package]]
 name = "cz-path"
-version = "0.0.2"
+version = "0.0.3"
 description = "Commitizen plugin that prefixes commit messages with the common path or prefix of staged files."
 optional = false
 python-versions = "<4.0,>=3.10"
 groups = ["dev"]
 files = [
-    {file = "cz_path-0.0.2-py3-none-any.whl", hash = "sha256:eeabf8514f546dddf5aeb3799c53e60352ee0ae822ba0fb973bfdf43efec82d7"},
-    {file = "cz_path-0.0.2.tar.gz", hash = "sha256:d23c8c197f99f4b6ae19febcdb759815e6093669318bc10424a1d3b89190599e"},
+    {file = "cz_path-0.0.3-py3-none-any.whl", hash = "sha256:c62ef9e444dd976505022b2e709192c1ca90dc5bdad808b90d3aac02e60fd329"},
+    {file = "cz_path-0.0.3.tar.gz", hash = "sha256:ac039de5512bdf8d04c7c0ca2dd7b9a86d403559116622c1938beadbc66c9777"},
 ]
 
 [package.dependencies]
-bascom = ">=0.0.3,<0.0.4"
 commitizen = ">=4.9.1,<5.0.0"
 gitpython = ">=3.1.45,<4.0.0"
 typing-extensions = ">=4.15.0,<5.0.0"
@@ -672,14 +637,21 @@ groups = ["dev"]
 files = [
     {file = "pycairo-1.28.0-cp310-cp310-win32.whl", hash = "sha256:53e6dbc98456f789965dad49ef89ce2c62f9a10fc96c8d084e14da0ffb73d8a6"},
     {file = "pycairo-1.28.0-cp310-cp310-win_amd64.whl", hash = "sha256:c8ab91a75025f984bc327ada335c787efb61c929ea0512063793cb36cee503d4"},
+    {file = "pycairo-1.28.0-cp310-cp310-win_arm64.whl", hash = "sha256:e955328c1a5147bf71ee94e206413ce15e12630296a79788fcd246c80e5337b8"},
     {file = "pycairo-1.28.0-cp311-cp311-win32.whl", hash = "sha256:0fee15f5d72b13ba5fd065860312493dc1bca6ff2dce200ee9d704e11c94e60a"},
     {file = "pycairo-1.28.0-cp311-cp311-win_amd64.whl", hash = "sha256:6339979bfec8b58a06476094a9a5c104bd5a99932ddaff16ca0d9203d2f4482c"},
+    {file = "pycairo-1.28.0-cp311-cp311-win_arm64.whl", hash = "sha256:c6ae15392e28ebfc0b35d8dc05d395d3b6be4bad9ad4caecf0fa12c8e7150225"},
     {file = "pycairo-1.28.0-cp312-cp312-win32.whl", hash = "sha256:c00cfbb7f30eb7ca1d48886712932e2d91e8835a8496f4e423878296ceba573e"},
     {file = "pycairo-1.28.0-cp312-cp312-win_amd64.whl", hash = "sha256:d50d190f5033992b55050b9f337ee42a45c3568445d5e5d7987bab96c278d8a6"},
+    {file = "pycairo-1.28.0-cp312-cp312-win_arm64.whl", hash = "sha256:957e0340ee1c279d197d4f7cfa96f6d8b48e453eec711fca999748d752468ff4"},
     {file = "pycairo-1.28.0-cp313-cp313-win32.whl", hash = "sha256:d13352429d8a08a1cb3607767d23d2fb32e4c4f9faa642155383980ec1478c24"},
     {file = "pycairo-1.28.0-cp313-cp313-win_amd64.whl", hash = "sha256:082aef6b3a9dcc328fa648d38ed6b0a31c863e903ead57dd184b2e5f86790140"},
+    {file = "pycairo-1.28.0-cp313-cp313-win_arm64.whl", hash = "sha256:026afd53b75291917a7412d9fe46dcfbaa0c028febd46ff1132d44a53ac2c8b6"},
+    {file = "pycairo-1.28.0-cp314-cp314-win32.whl", hash = "sha256:d0ab30585f536101ad6f09052fc3895e2a437ba57531ea07223d0e076248025d"},
+    {file = "pycairo-1.28.0-cp314-cp314-win_amd64.whl", hash = "sha256:94f2ed204999ab95a0671a0fa948ffbb9f3d6fb8731fe787917f6d022d9c1c0f"},
     {file = "pycairo-1.28.0-cp39-cp39-win32.whl", hash = "sha256:3ed16d48b8a79cc584cb1cb0ad62dfb265f2dda6d6a19ef5aab181693e19c83c"},
     {file = "pycairo-1.28.0-cp39-cp39-win_amd64.whl", hash = "sha256:da0d1e6d4842eed4d52779222c6e43d254244a486ca9fdab14e30042fd5bdf28"},
+    {file = "pycairo-1.28.0-cp39-cp39-win_arm64.whl", hash = "sha256:458877513eb2125513122e8aa9c938630e94bb0574f94f4fb5ab55eb23d6e9ac"},
     {file = "pycairo-1.28.0.tar.gz", hash = "sha256:26ec5c6126781eb167089a123919f87baa2740da2cca9098be8b3a6b91cc5fbc"},
 ]
 
@@ -731,6 +703,13 @@ optional = false
 python-versions = ">=3.8"
 groups = ["dev"]
 files = [
+    {file = "PyYAML-6.0.3-cp38-cp38-macosx_10_13_x86_64.whl", hash = "sha256:c2514fceb77bc5e7a2f7adfaa1feb2fb311607c9cb518dbc378688ec73d8292f"},
+    {file = "PyYAML-6.0.3-cp38-cp38-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:9c57bb8c96f6d1808c030b1687b9b5fb476abaa47f0db9c0101f5e9f394e97f4"},
+    {file = "PyYAML-6.0.3-cp38-cp38-manylinux2014_s390x.manylinux_2_17_s390x.manylinux_2_28_s390x.whl", hash = "sha256:efd7b85f94a6f21e4932043973a7ba2613b059c4a000551892ac9f1d11f5baf3"},
+    {file = "PyYAML-6.0.3-cp38-cp38-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:22ba7cfcad58ef3ecddc7ed1db3409af68d023b7f940da23c6c2a1890976eda6"},
+    {file = "PyYAML-6.0.3-cp38-cp38-musllinux_1_2_x86_64.whl", hash = "sha256:6344df0d5755a2c9a276d4473ae6b90647e216ab4757f8426893b5dd2ac3f369"},
+    {file = "PyYAML-6.0.3-cp38-cp38-win32.whl", hash = "sha256:3ff07ec89bae51176c0549bc4c63aa6202991da2d9a6129d7aef7f1407d3f295"},
+    {file = "PyYAML-6.0.3-cp38-cp38-win_amd64.whl", hash = "sha256:5cf4e27da7e3fbed4d6c3d8e797387aaad68102272f8f9752883bc32d61cb87b"},
     {file = "pyyaml-6.0.3-cp310-cp310-macosx_10_13_x86_64.whl", hash = "sha256:214ed4befebe12df36bcc8bc2b64b396ca31be9304b8f59e25c11cf94a4c033b"},
     {file = "pyyaml-6.0.3-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:02ea2dfa234451bbb8772601d7b8e426c2bfa197136796224e50e35a78777956"},
     {file = "pyyaml-6.0.3-cp310-cp310-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:b30236e45cf30d2b8e7b3e85881719e98507abed1011bf463a8fa23e9c3e98a8"},
@@ -1257,4 +1236,4 @@ tomli = {version = ">=2.0.1", markers = "python_version < \"3.11\""}
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.10,<4.0"
-content-hash = "2ff63c6e689de351a7d09c921e6510e9b188ad5d835686c87bbf3c259e6e9ab6"
+content-hash = "b77cd93eddbb46470ca5ff38dfeb42061bcc0a433f50184718bf826cb6e316c8"
