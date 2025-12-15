@@ -770,13 +770,13 @@ pycairo = ">=1.16"
 
 [[package]]
 name = "pygobject-stubs"
-version = "2.15.0"
+version = "2.16.0"
 description = "Typing stubs for PyGObject"
 optional = false
 python-versions = ">=3.9"
 groups = ["main"]
 files = [
-    {file = "pygobject_stubs-2.15.0.tar.gz", hash = "sha256:d2d89997c618819e8aecd67a3680bebbbb6349121f0b0452204dbdd7e157ad43"},
+    {file = "pygobject_stubs-2.16.0.tar.gz", hash = "sha256:a97574616e92ef458605f9520d8d9db4c2a131affcd12fdd51db0b42395291e9"},
 ]
 
 [package.dependencies]
@@ -1326,4 +1326,4 @@ tomli = {version = ">=2.0.1", markers = "python_version < \"3.11\""}
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.10,<4.0"
-content-hash = "883a65ea0e83fe5b9c527d23814c2836f1a283e61cbd57c6f8df2dbd81830190"
+content-hash = "8939a33876fa8bc921cbb750fddc5f80e06858ab90796ce7ae7db14a89e63b19"
