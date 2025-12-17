@@ -25,6 +25,7 @@ jsonnet
 jsonschema
 lextudio
 libcairo
+libera
 libgirepository
 libjsonnet
 linters
@@ -40,6 +41,7 @@ pydbus
 pydocstyle
 pygobject
 pylint
+pypa
 pypi
 pyproject
 pytest
@@ -47,6 +49,7 @@ regen
 rstcheck
 schemafile
 shellformat
+softprops
 tatsh
 typeshed
 udvare
