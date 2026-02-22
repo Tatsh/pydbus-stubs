@@ -2,7 +2,6 @@ aquired
 asyncio
 bluez
 bsky
-codeowners
 commitizen
 conftest
 coveragerc
