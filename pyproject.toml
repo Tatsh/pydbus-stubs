@@ -82,7 +82,7 @@ cz-path = "^0.0.4"
 djlint = "^1.36.4"
 mypy = "^1.19.1"
 pydbus = "^0.6.0"
-pygobject = "^3.54.5"
+pygobject = "^3.56.0"
 ruff = "^0.15.2"
 yapf = "^0.43.0"
 
