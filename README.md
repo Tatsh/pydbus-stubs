@@ -25,14 +25,6 @@ PEP 561 type stubs for pydbus.
 
 ## Installation
 
-### Poetry
-
-```shell
-poetry add pydbus-stubs
-```
-
-### Pip
-
 ```shell
 pip install pydbus-stubs
 ```
