@@ -547,7 +547,7 @@ requires-dist = [
 [package.metadata.requires-dev]
 dev = [
     { name = "commitizen", specifier = ">=4.13.9" },
-    { name = "cz-path", specifier = ">=0.0.5" },
+    { name = "cz-path", specifier = ">=0.0.6" },
     { name = "mypy", specifier = ">=1.19.1" },
     { name = "pydbus", specifier = ">=0.6.0" },
     { name = "pygobject", specifier = ">=3.56.1" },
