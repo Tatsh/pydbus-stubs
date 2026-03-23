@@ -13,6 +13,7 @@ dashcam
 dbus
 docstrings
 doctrees
+dorny
 dunder
 eeyore
 elif
