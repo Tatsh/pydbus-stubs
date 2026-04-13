@@ -1,3 +1,4 @@
+Ångström
 appimage
 aquired
 asyncio
@@ -7,13 +8,13 @@ bsky
 cdrommsf
 commitizen
 conftest
+cooldown
 coveragerc
 ctypes
 dashcam
 dbus
 docstrings
 doctrees
-dorny
 dunder
 eeyore
 elif
@@ -44,6 +45,7 @@ mktemp
 modalias
 monkeypatch
 mypy
+npmjs
 numpy
 oneline
 outargs
@@ -57,6 +59,7 @@ pydocstyle
 pygobject
 pyinstaller
 pylint
+pylock
 pypa
 pypi
 pyproject
@@ -64,6 +67,7 @@ pytest
 regen
 rstcheck
 schemafile
+sdist
 setattr
 shellcheck
 shellformat
@@ -79,7 +83,7 @@ unown
 vendored
 venv
 wiswa
+wiswa's
 yapf
 yapfignore
 yarnrc
-ångström

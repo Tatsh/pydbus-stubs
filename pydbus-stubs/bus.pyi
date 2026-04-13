@@ -163,7 +163,7 @@ class OrgFreedesktopDBusObjectManager:
 
 
 class OrgBluez(CompositeObject[_T]):
-    def __getitem__(  # type: ignore[override]
+    def __getitem__(  # type: ignore[override] # ty: ignore[invalid-method-override]
             self,
             key: Literal['org.freedesktop.DBus.ObjectManager']) -> OrgFreedesktopDBusObjectManager:
         ...
@@ -246,7 +246,7 @@ class Bus(ProxyMixin[_T], RequestNameMixin[_T], OwnMixin, WatchMixin, Subscripti
         ...
 
     @overload
-    def get(self, bus_name: str, object_path: str) -> Any:
+    def get(self, bus_name: str, object_path: str) -> Any:  # ty: ignore[invalid-method-override]
         ...
 
 
