@@ -18,6 +18,7 @@ doctrees
 dunder
 eeyore
 elif
+esac
 esbenp
 exitable
 foxundermoon
@@ -64,7 +65,9 @@ pypa
 pypi
 pyproject
 pytest
+pythonhosted
 regen
+ripgreprc
 rstcheck
 schemafile
 sdist
@@ -76,6 +79,7 @@ softprops
 soupsieve
 tatsh
 tomllib
+tostring
 typeshed
 ubyte
 udvare
