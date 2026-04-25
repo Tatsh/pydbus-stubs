@@ -150,10 +150,9 @@ OrgBluezDict = TypedDict(
         'org.bluez.NetworkServer1': dict[str, Any],
         'org.bluez.ProfileManager1': dict[str, Any],
         'org.freedesktop.DBus.Introspectable': dict[str, Any],
-        'org.freedesktop.DBus.Properties': dict[str, Any],
+        'org.freedesktop.DBus.Properties': dict[str, Any]
     },
-    total=False,
-)
+    total=False)
 
 
 class OrgFreedesktopDBusObjectManager:
@@ -199,7 +198,7 @@ class OrgFreedesktopNotifications(CompositeObject[_T], Generic[_T, _ST]):
         hints: dict[
             str, bool | bytes | int
             | str],  # See https://specifications.freedesktop.org/notification-spec/1.3/hints.html
-        expire_timeout: int,
+        expire_timeout: int
     ) -> int:
         ...
 

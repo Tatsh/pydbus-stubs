@@ -21,16 +21,9 @@ class ObjectWrapper(Exitable, Generic[_T]):
 
     SignalEmitted: signal[_T]
 
-    def call_method(
-        self,
-        connection: Gio.DBusConnection,
-        sender: str,
-        object_path: str,
-        interface_name: str,
-        method_name: str,
-        parameters: GLib.Variant,
-        invocation: Gio.DBusMethodInvocation,
-    ) -> None:
+    def call_method(self, connection: Gio.DBusConnection, sender: str, object_path: str,
+                    interface_name: str, method_name: str, parameters: GLib.Variant,
+                    invocation: Gio.DBusMethodInvocation) -> None:
         ...
 
     def Get(self, interface_name: str, property_name: str) -> GLib.Variant:
