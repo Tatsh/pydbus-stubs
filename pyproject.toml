@@ -6,11 +6,11 @@ requires = ["hatchling"]
 dev = [
   "commitizen>=4.13.10",
   "cz-path>=0.0.6",
-  "mypy>=1.20.0",
+  "mypy>=1.20.1",
   "pydbus>=0.6.0",
   "pygobject>=3.56.2",
-  "ruff>=0.15.10",
-  "ty>=0.0.29",
+  "ruff==0.15.11",
+  "ty>=0.0.31",
   "yapf>=0.43.0",
 ]
 
@@ -209,4 +209,4 @@ split_penalty_logical_operator = 300
 use_tabs = false
 
 [tool.yapfignore]
-ignore_patterns = [".venv/**", "node_modules/**"]
+ignore_patterns = [".venv", ".wiswa-ci", "node_modules"]
