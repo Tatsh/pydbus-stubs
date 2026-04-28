@@ -1,5 +1,4 @@
 import types
-from collections.abc import Iterable
 from typing_extensions import Self
 
 
@@ -14,5 +13,5 @@ class Exitable:
         ...
 
 
-def ExitableWithAliases(*exit_methods: Iterable[str]) -> Exitable:
+def ExitableWithAliases(*exit_methods: str) -> Exitable:
     ...

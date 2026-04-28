@@ -16,7 +16,7 @@ class ProxySignal(Generic[_T, _PT]):
     def __init__(self, iface_name: str, signal: Element) -> None:
         ...
 
-    def connect(self, object: str, callback: Callable[..., None]) -> Subscription:
+    def connect(self, object: str, callback: Callable[..., object]) -> Subscription:
         ...
 
     @overload

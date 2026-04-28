@@ -1,4 +1,4 @@
-def isident(s: str) -> bool:
+def isident(s: str, /) -> bool:
     ...
 
 

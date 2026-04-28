@@ -1,5 +1,3 @@
-from gi.repository.GLib import Variant
+from .bus import SessionBus as SessionBus, SystemBus as SystemBus, connect as connect
 
-from .bus import SessionBus, SystemBus, connect
-
-__all__ = ['SessionBus', 'SystemBus', 'Variant', 'connect']
+__all__ = ['SessionBus', 'SystemBus', 'connect']
