@@ -5,7 +5,7 @@ local utils = import 'utils.libjsonnet';
   description: 'PEP 561 type stubs for pydbus.',
   keywords: ['dbus', 'pep561', 'stubs', 'types'],
   project_name: 'pydbus-stubs',
-  version: '0.0.3',
+  version: '0.0.4',
   want_docs: false,
   want_tests: false,
   stubs_only: true,

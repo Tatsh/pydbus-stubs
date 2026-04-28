@@ -9,6 +9,8 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.0.4] - 2026-04-28
+
 Ported semantic differences from the typeshed `pydbus` stubs
 (<https://github.com/python/typeshed/tree/main/stubs/pydbus>).
 
@@ -58,5 +60,6 @@ Ported semantic differences from the typeshed `pydbus` stubs
 
 First version.
 
-[unreleased]: https://github.com/Tatsh/pydbus-stubs/compare/v0.0.3...HEAD
+[unreleased]: https://github.com/Tatsh/pydbus-stubs/compare/v0.0.4...HEAD
+[0.0.4]: https://github.com/Tatsh/pydbus-stubs/compare/v0.0.3...v0.0.4
 [0.0.1]: https://github.com/Tatsh/pydbus-stubs/releases/tag/v0.0.1
