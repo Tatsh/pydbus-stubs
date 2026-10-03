@@ -1,4 +1,3 @@
-Ångström
 appimage
 aquired
 asyncio
@@ -8,7 +7,6 @@ bsky
 cdrommsf
 commitizen
 conftest
-cooldown
 coveragerc
 ctypes
 dashcam
@@ -47,7 +45,10 @@ mktemp
 modalias
 monkeypatch
 mypy
+noone
+nullglob
 numpy
+numpydoc
 oneline
 outargs
 pairable
@@ -71,11 +72,13 @@ pythonhosted
 regen
 ripgreprc
 rstcheck
+sbclaude
 schemafile
 sdist
 setattr
 shellcheck
 shellformat
+shopt
 snapcraft
 soupsieve
 statusline
@@ -93,8 +96,8 @@ venv
 winget
 wiswa
 wiswa's
-worktree
 yapf
 yapfignore
 yarnrc
 zizmor
+Ångström

@@ -4,14 +4,14 @@ requires = ["hatchling"]
 
 [dependency-groups]
 dev = [
-  "commitizen>=4.16.5",
+  "commitizen>=4.19.0",
   "cz-path>=0.0.7",
-  "mypy>=2.3.0",
+  "mypy>=2.3.1",
   "pydbus>=0.6.0",
-  "pygobject>=3.56.3",
-  "ruff==0.16.8",
-  "ty>=0.0.64",
-  "yapf>=0.43.0",
+  "pygobject>=3.58.0",
+  "ruff==0.16.9",
+  "ty>=0.0.84",
+  "yapf>=0.43.0"
 ]
 
 [project]
@@ -24,7 +24,7 @@ classifiers = [
   "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: 3.13",
   "Programming Language :: Python :: 3.14",
-  "Typing :: Stubs Only",
+  "Typing :: Stubs Only"
 ]
 dependencies = ["pygobject-stubs>=2.17.0", "typing-extensions>=4.16.0"]
 description = "PEP 561 type stubs for pydbus."
@@ -74,7 +74,7 @@ warn_unreachable = true
 [tool.pyright]
 deprecateTypingAliases = true
 enableExperimentalFeatures = true
-exclude = [".venv", "**/node_modules", "**/__pycache__", "**/.*"]
+exclude = [".sbclaude-venv", ".venv", "**/node_modules", "**/__pycache__", "**/.*"]
 include = ["./pydbus-stubs"]
 pythonPlatform = "Linux"
 pythonVersion = "3.10"
@@ -105,27 +105,24 @@ quote-style = "single"
 [tool.ruff.lint]
 extend-select = ["ALL"]
 ignore = [
-  "A002",
-  "ANN401",
-  "COM812",
-  "CPY001",
-  "D203",
-  "D204",
-  "D212",
-  "E303",
-  "FBT001",
-  "I001",
   "N",
-  "N818",
-  "RUF105",
-  "RUF106",
-  "RUF201",
   "S",
-  "S404",
-  "S603",
-  "T201",
-  "TD002",
-  "TID252",
+  "any-type",
+  "boolean-type-hint-positional-argument",
+  "builtin-argument-shadowing",
+  "error-suffix-on-exception-name",
+  "incorrect-blank-line-after-class",
+  "incorrect-blank-line-before-class",
+  "missing-copyright-notice",
+  "missing-todo-author",
+  "missing-trailing-comma",
+  "multi-line-summary-first-line",
+  "print",
+  "relative-imports",
+  "subprocess-without-shell-equals-true",
+  "suspicious-subprocess-import",
+  "too-many-blank-lines",
+  "unsorted-imports"
 ]
 preview = true
 
@@ -141,7 +138,7 @@ case-sensitive = true
 combine-as-imports = true
 from-first = true
 required-imports = ["from __future__ import annotations"]
-section-order = ["future", "standard-library", "third-party", "local-folder"]
+section-order = ["future", "standard-library", "third-party", "first-party", "local-folder"]
 
 [tool.ruff.lint.mccabe]
 max-complexity = 20
@@ -212,4 +209,4 @@ split_penalty_logical_operator = 300
 use_tabs = false
 
 [tool.yapfignore]
-ignore_patterns = [".venv", ".wiswa-ci", "node_modules"]
+ignore_patterns = [".sbclaude-venv", ".venv", ".wiswa-ci", "node_modules"]
