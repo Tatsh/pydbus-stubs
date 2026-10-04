@@ -1,7 +1,6 @@
 from _typeshed import Unused
 from collections.abc import Callable
-from typing import Generic, TypeVar, overload
-from typing_extensions import Self
+from typing import Generic, Self, TypeVar, overload
 from xml.etree.ElementTree import Element
 
 from .generic import bound_signal

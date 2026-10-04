@@ -1,8 +1,7 @@
 import types
 from _typeshed import Unused
 from collections.abc import Callable
-from typing import Generic, TypeVar, overload
-from typing_extensions import Self
+from typing import Generic, Self, TypeVar, overload
 
 
 class subscription:

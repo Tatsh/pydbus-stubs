@@ -1,6 +1,5 @@
 import types
-from typing import TypeVar, type_check_only
-from typing_extensions import Self
+from typing import Self, TypeVar, type_check_only
 
 from gi.repository import Gio
 

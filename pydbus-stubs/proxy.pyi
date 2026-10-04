@@ -1,5 +1,4 @@
-from typing import Any, Generic, Literal, TypedDict, TypeVar, overload, type_check_only
-from typing_extensions import Self
+from typing import Any, Generic, Literal, Self, TypedDict, TypeVar, overload, type_check_only
 from xml.etree.ElementTree import Element
 
 from .bus import Bus
