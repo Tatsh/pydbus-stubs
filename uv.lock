@@ -1,5 +1,5 @@
 version = 1
-revision = 3
+revision = 5
 requires-python = ">=3.11, <4.0"
 resolution-markers = [
     "python_full_version >= '3.15'",
@@ -670,6 +670,7 @@ wheels = [
 name = "pydbus-stubs"
 version = "0.0.4"
 source = { editable = "." }
+default-groups = "all"
 dependencies = [
     { name = "pygobject-stubs" },
     { name = "typing-extensions" },
@@ -716,13 +717,13 @@ sdist = { url = "https://files.pythonhosted.org/packages/65/1e/d590f82e14db75945
 
 [[package]]
 name = "pygobject-stubs"
-version = "2.17.0"
+version = "2.19.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "pygobject" },
     { name = "typing-extensions" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/8c/be/bf49399ad2e788121f595903a56447d4b778d67acbb01ecfc1c6d5cf91f6/pygobject_stubs-2.17.0.tar.gz", hash = "sha256:66884d26974dd7fb99a8bc5972b5bdeb4b7399ecc7ac53913a6cafa6ab21491f", size = 1010510, upload-time = "2026-03-20T17:08:59.656Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/95/26/0835a4fdf18f87fa4d3740f8b3a610a834536af91fc22e60e561213291de/pygobject_stubs-2.19.0.tar.gz", hash = "sha256:b6da3fa0f99dbb039f16489994a6e00a5b40c0e4cea5993b9a6c46d0ed5340eb", size = 1072302, upload-time = "2026-10-16T17:36:38.071Z" }
 
 [[package]]
 name = "pyyaml"
