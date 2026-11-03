@@ -12,6 +12,11 @@ local utils = import 'utils.libjsonnet';
   primary_module: self.project_name,
   local apt_packages = ['libcairo2-dev', 'libgirepository-2.0-dev'],
   github+: {
+    codeql+: {
+      languages: ['actions'],
+      runs_on: 'ubuntu-latest',
+      workflow_file: 'codeql.yml',
+    },
     workflows+: {
       qa+: {
         apt_packages: apt_packages,
