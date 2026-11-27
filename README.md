@@ -7,6 +7,7 @@
 [![GitHub tag (with filter)](https://img.shields.io/github/v/tag/Tatsh/pydbus-stubs)](https://github.com/Tatsh/pydbus-stubs/tags)
 [![License](https://img.shields.io/github/license/Tatsh/pydbus-stubs)](https://github.com/Tatsh/pydbus-stubs/blob/master/LICENSE.txt)
 [![GitHub commits since latest release (by SemVer including pre-releases)](https://img.shields.io/github/commits-since/Tatsh/pydbus-stubs/v0.0.4/master)](https://github.com/Tatsh/pydbus-stubs/compare/v0.0.4...master)
+[![CodeQL](https://github.com/Tatsh/pydbus-stubs/actions/workflows/codeql.yml/badge.svg)](https://github.com/Tatsh/pydbus-stubs/actions/workflows/codeql.yml)
 [![QA](https://github.com/Tatsh/pydbus-stubs/actions/workflows/qa.yml/badge.svg)](https://github.com/Tatsh/pydbus-stubs/actions/workflows/qa.yml)
 [![Dependabot](https://img.shields.io/badge/Dependabot-enabled-blue?logo=dependabot)](https://github.com/dependabot)
 [![mypy](https://www.mypy-lang.org/static/mypy_badge.svg)](https://mypy-lang.org/)

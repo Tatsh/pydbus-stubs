@@ -4,13 +4,13 @@ requires = ["hatchling"]
 
 [dependency-groups]
 dev = [
-  "commitizen>=4.19.0",
+  "commitizen>=4.19.4",
   "cz-path>=0.0.7",
-  "mypy>=2.3.1",
+  "mypy>=2.4.1",
   "pydbus>=0.6.0",
-  "pygobject>=3.58.0",
-  "ruff==0.17.5",
-  "ty>=0.0.84",
+  "pygobject>=3.58.1",
+  "ruff==0.17.6",
+  "ty>=0.0.107",
   "yapf>=0.43.0"
 ]
 
@@ -25,13 +25,13 @@ classifiers = [
   "Programming Language :: Python :: 3.14",
   "Typing :: Stubs Only"
 ]
-dependencies = ["pygobject-stubs>=2.17.0", "typing-extensions>=4.16.0"]
+dependencies = ["pygobject-stubs>=2.20.0", "typing-extensions>=4.16.0"]
 description = "PEP 561 type stubs for pydbus."
 keywords = ["dbus", "pep561", "stubs", "types"]
 license = "MIT"
 name = "pydbus-stubs"
 readme = "README.md"
-requires-python = ">=3.11,<4.0"
+requires-python = ">=3.11.5,<4.0"
 version = "0.0.4"
 
 [[project.authors]]
