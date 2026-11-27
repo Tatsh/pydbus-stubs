@@ -171,7 +171,7 @@ class _CompositeObject(ProxyObject[_T]):  # Inside CompositeInterface
 
 @type_check_only
 class _OrgBluez(_CompositeObject[_T]):
-    def __getitem__(  # type: ignore[override] # ty: ignore[invalid-method-override]
+    def __getitem__(  # type: ignore[override] # ty: ignore[incompatible-method-override]
             self,
             key: Literal['org.freedesktop.DBus.ObjectManager']) -> _OrgFreedesktopDBusObjectManager:
         ...
